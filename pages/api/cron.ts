@@ -14,7 +14,7 @@ export default async function handler(
         data: {
           title: "POST FROM THE CRON!",
           content: "CONTENT!",
-        },
+        });
 
       // if (authorization === `Bearer ${process.env.API_SECRET_KEY}`) {
       console.log("succeded to call!");
