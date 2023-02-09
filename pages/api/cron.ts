@@ -10,6 +10,8 @@ export default async function handler(
   if (req.method === "POST") {
     try {
       
+      console.log(req.headers, "REQ HEADERS")
+      
       const { authorization } = req.headers;
       
     if (authorization === `Bearer ${process.env.API_SECRET_KEY}`) {
