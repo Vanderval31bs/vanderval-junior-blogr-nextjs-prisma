@@ -1,7 +1,7 @@
 name: daily-cron
 on:
   schedule:
-    - cron: '55 15 * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 jobs:
   cron:
