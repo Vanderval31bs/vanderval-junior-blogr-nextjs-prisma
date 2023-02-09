@@ -25,7 +25,9 @@ export default async function handler(
         text: "EMAIL TESTE 21231251512412",
         from: "ambitus@w2s3.com.br",
         subject: "TITLE 2123132",
-      });
+      }).then(() => {
+      res.status(200).json({ msg: "Ok" });
+    });
       console.log("HAS SENDED!!!!");
       res.status(200).json({ success: true });
       //   } else {
