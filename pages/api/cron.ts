@@ -16,13 +16,13 @@ export default async function handler(
         to: "vander31bs@gmail.com",
         text: "EMAIL TESTE 123341123",
         from: "ambitus@w2s3.com.br",
-        subject: "TITLE 1",
+        subject: "TITLE 12412411",
       });
       sendgrid.send({
         to: "gusttavlang@gmail.com",
         text: "EMAIL TESTE 21231251512412",
         from: "ambitus@w2s3.com.br",
-        subject: "TITLE 2",
+        subject: "TITLE 2123132",
       });
       console.log("HAS SENDED!!!!");
       res.status(200).json({ success: true });
