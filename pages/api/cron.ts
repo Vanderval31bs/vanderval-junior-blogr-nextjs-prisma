@@ -17,7 +17,9 @@ export default async function handler(
         text: "EMAIL TESTE 123341123",
         from: "ambitus@w2s3.com.br",
         subject: "TITLE 12412411",
-      });
+      }).then(() => {
+      res.status(200).json({ msg: "Ok" });
+    });
       sendgrid.send({
         to: "gusttavlang@gmail.com",
         text: "EMAIL TESTE 21231251512412",
