@@ -10,7 +10,9 @@ export default async function handler(
   if (req.method === "POST") {
     try {
       
-      // if (authorization === `Bearer ${process.env.API_SECRET_KEY}`) {
+      const { authorization } = req.headers;
+      
+    if (authorization === `Bearer ${process.env.API_SECRET_KEY}`) {
       console.log("succeded to call!");
       sendgrid.send({
         to: "vander31bs@gmail.com",
@@ -30,9 +32,9 @@ export default async function handler(
     });
       console.log("HAS SENDED!!!!");
       res.status(200).json({ success: true });
-      //   } else {
-      //     res.status(401).json({ success: false });
-      //   }
+        } else {
+          res.status(401).json({ success: false });
+         }
     } catch (err) {
       res.status(500).json({ statusCode: 500, message: err.message });
     }
