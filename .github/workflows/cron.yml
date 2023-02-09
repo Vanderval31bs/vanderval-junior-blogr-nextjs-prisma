@@ -2,6 +2,7 @@ name: daily-cron
 on:
   schedule:
     - cron: '22 14 * * *'
+  workflow_dispatch:
 jobs:
   cron:
     runs-on: ubuntu-latest
