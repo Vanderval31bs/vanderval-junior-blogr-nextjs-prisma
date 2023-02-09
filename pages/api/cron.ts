@@ -10,26 +10,21 @@ export default async function handler(
   if (req.method === "POST") {
     try {
       
-      await prisma.post.create({
-        data: {
-          title: "POST FROM THE CRON!",
-          content: "CONTENT!",
-        },});
-
       // if (authorization === `Bearer ${process.env.API_SECRET_KEY}`) {
       console.log("succeded to call!");
       sendgrid.send({
         to: "vander31bs@gmail.com",
-        text: "EMAIL TESTE 1",
+        text: "EMAIL TESTE 123341123",
         from: "ambitus@w2s3.com.br",
         subject: "TITLE 1",
       });
       sendgrid.send({
         to: "gusttavlang@gmail.com",
-        text: "EMAIL TESTE 2",
+        text: "EMAIL TESTE 21231251512412",
         from: "ambitus@w2s3.com.br",
         subject: "TITLE 2",
       });
+      console.log("HAS SENDED!!!!");
       res.status(200).json({ success: true });
       //   } else {
       //     res.status(401).json({ success: false });
