@@ -1,4 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next";;
+import { NextApiRequest, NextApiResponse } from "next";
+import prisma from '../../lib/prisma';
 const sendgrid = require("@sendgrid/mail");
 sendgrid.setApiKey(process.env.SENDGRID_API);
 
@@ -8,7 +9,12 @@ export default async function handler(
 ) {
   if (req.method === "POST") {
     try {
-      const { authorization } = req.headers;
+      
+      await prisma.post.create({
+        data: {
+          title: "POST FROM THE CRON!",
+          content: "CONTENT!",
+        },
 
       // if (authorization === `Bearer ${process.env.API_SECRET_KEY}`) {
       console.log("succeded to call!");
